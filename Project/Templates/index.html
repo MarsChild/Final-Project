@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flask Intro</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="container">
+            <h1> Welcome to Flask"</h1>
+            <br>
+            <p> CLick <a href="/logout">here</a>a> to logout.</p>
+            <br><br>
+            <h3> posts</h3>
+            {% for post in posts %}
+                <strong>Title</strong> {{ post.title }} <br>
+                <strong>Post</strong> {{ post.description }} <br>
+            <br>
+            {% endfor %}
+
+            {% for message in get_flashed_messages() %}
+                {{ message}}
+            {% endfor %}
+        </div>
+    </body>
+</html>
